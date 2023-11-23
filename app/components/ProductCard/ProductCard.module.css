@@ -1,0 +1,8 @@
+.cardContainer { 
+    padding: 1rem;
+    border: 1px solid #ccc;
+}
+
+/* we use camel case */
+
+/* next js uses postcss to transform our class names like 'cardContainer' and generate unique class name(autogenerate) that don't clash*/

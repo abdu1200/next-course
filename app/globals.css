@@ -1,27 +1,29 @@
 @tailwind base;
-@tailwind components;
+@tailwind components;   
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+/* these are the 3 directives to import the basic styles from tailwind or the 3 layers in tailwind  */
+
+:root {    /*root selector */
+  --foreground-rgb: 0, 0, 0;    /* custom properties */
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
   }
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  color: rgb(var(--foreground-rgb));    
 }
+
+/* another directive for overwiting the styles in the base layer */
+/* in the base layer, we can define styles for plain html elements like h1, h2.. */
+@layer base { 
+  h1 {
+    @apply font-bold text-2xl mb-3;   /* apply is a directive to apply and the others are entity classes to be applied to the html element as a basic or base style */
+  }
+}
+
+/* we can put the font-poppins class or entity in the h1 if we want all the h1's to have that custom font poppins */
